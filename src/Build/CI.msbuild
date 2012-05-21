@@ -40,7 +40,7 @@
       SourceFiles="@(StyleCopFiles)"
       ForceFullAnalysis="true"
       DefineConstants="$(DefineConstants)"
-      TreatErrorsAsWarnings="true"
+      TreatErrorsAsWarnings="false"
       CacheResults="$(StyleCopCacheResults)"
       OverrideSettingsFile="$(StyleCopSettingsFile)"
       OutputFile="$(StyleCopOutputFile)"
