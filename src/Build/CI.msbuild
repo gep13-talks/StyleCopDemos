@@ -1,0 +1,57 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build; StyleCop" >
+
+  <Import Project="..\Demo 3 - StyleCop As Custom Task\packages\StyleCop.MSBuild.4.7.24.0\tools\StyleCop.Targets"/>
+  <UsingTask TaskName="MSBuild.ExtensionPack.Xml.XmlTask" AssemblyFile="..\Lib\MSBuild.ExtensionPack\4.0.0.0\Binaries\MSBuild.ExtensionPack.dll"></UsingTask>
+  
+  <PropertyGroup>
+    <BuildReportDirectory>BuildReports</BuildReportDirectory>
+    <StyleCopXml>StyleCopViolations.xml</StyleCopXml>
+    <StyleCopReport>$(BuildReportDirectory)\StyleCop\stylecop-report.html</StyleCopReport>
+  </PropertyGroup>
+
+  <Target Name="MakeDirectories">
+    <MakeDir Directories="$(BuildReportDirectory)"></MakeDir>
+  </Target>
+
+  <ItemGroup>
+    <SolutionToBuild Include="..\Demo 3 - StyleCop As Custom Task\*.sln">
+      <Properties>Configuration=Release</Properties>
+    </SolutionToBuild>
+  </ItemGroup>
+ 
+  <Target Name="Build" DependsOnTargets="MakeDirectories;">
+    <MSBuild Projects="@(SolutionToBuild)" />
+  </Target> 
+  
+  <ItemGroup>
+    <StyleCopFiles Include="..\Demo 3 - StyleCop As Custom Task\\**\*.cs"
+                   Exclude="..\Demo 3 - StyleCop As Custom Task\\**\AssemblyInfo.cs;"></StyleCopFiles>
+    <StyleCopResources Include="..\SharedResources\BuildReports\StyleCop\Resources\*.*"></StyleCopResources>
+    <StyleCopSettingsFile Include="Settings.StyleCop"></StyleCopSettingsFile>
+  </ItemGroup>
+
+  <Target Name="StyleCop" DependsOnTargets="Build">
+
+    <!--Copy StyleCop resources to BuildReports folder-->
+    <Copy DestinationFolder="$(BuildReportDirectory)\StyleCop" SourceFiles="@(StyleCopResources)"></Copy>
+
+    <StyleCopTask
+      ProjectFullPath="$(MSBuildProjectDirectory)"
+      SourceFiles="@(StyleCopFiles)"
+      ForceFullAnalysis="true"
+      DefineConstants="$(DefineConstants)"
+      TreatErrorsAsWarnings="true"
+      CacheResults="$(StyleCopCacheResults)"
+      OverrideSettingsFile="$(StyleCopSettingsFile)"
+      OutputFile="$(StyleCopOutputFile)"
+      MaxViolationCount="$(StyleCopMaxViolationCount)">
+    </StyleCopTask>
+
+    <MSBuild.ExtensionPack.Xml.XmlTask
+      TaskAction="Transform"
+      XmlFile="StyleCopViolations.xml"
+      XslTransformFile="..\SharedResources\BuildReports\StyleCop\StyleCop.xslt"
+      OutputFile="$(StyleCopReport)">
+    </MSBuild.ExtensionPack.Xml.XmlTask>
+  </Target>
+</Project>
