@@ -8,3 +8,4 @@ deploy
 *.dotCover
 output
 *DotSettings*
+StyleCope.Cache
