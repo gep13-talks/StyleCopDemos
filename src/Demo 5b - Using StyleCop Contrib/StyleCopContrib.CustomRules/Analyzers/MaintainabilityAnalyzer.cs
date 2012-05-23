@@ -10,6 +10,11 @@ namespace StyleCopContrib.CustomRules.Analyzers
     /// </summary>
     internal class MaintainabilityAnalyzer : RuleAnalyzerBase
     {
+        /// <summary>
+        /// The maximum number of characters allowed in a class name
+        /// </summary>
+        private const int MaximumClassNameLength = 50;
+
         public override void VisitDocument(CsDocument document)
         {
             using (var reader = document.SourceCode.Read())
@@ -50,6 +55,13 @@ namespace StyleCopContrib.CustomRules.Analyzers
                 if (element.ElementTokens.Any(x => x.CsTokenType == CsTokenType.Return))
                 {
                     this.SourceAnalyzer.AddViolation(element, ContribRule.ReturnStatementOnlyInFunctions);
+                }
+            }
+            else if (element.ElementType == ElementType.Class)
+            {
+                if (element.Declaration.Name.Length > MaximumClassNameLength)
+                {
+                    this.SourceAnalyzer.AddViolation(element, ContribRule.ClassNameLengthExceeded);
                 }
             }
         }

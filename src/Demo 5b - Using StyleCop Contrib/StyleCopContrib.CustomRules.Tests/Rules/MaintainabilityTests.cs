@@ -31,7 +31,7 @@ namespace StyleCopContrib.CustomRules.Tests.Rules
         {
             this.SetTargetFile(@"TargetFiles\Maintainability\ClassNameLengthExceeded1.cs");
 
-            this.AddExpectation(ContribRule.ClassNameLengthExceeded, 9);
+            this.AddExpectation(ContribRule.ClassNameLengthExceeded, 12);
 
             this.Analyze();
 

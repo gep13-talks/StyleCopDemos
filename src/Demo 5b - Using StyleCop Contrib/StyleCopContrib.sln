@@ -5,10 +5,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		CodeAnalysisDictionary.xml = CodeAnalysisDictionary.xml
 		CommonAssemblyInfo.cs = CommonAssemblyInfo.cs
-		Local.testsettings = Local.testsettings
 		Settings.StyleCop = Settings.StyleCop
-		StyleCopContrib.vsmdi = StyleCopContrib.vsmdi
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCopContrib.Runner", "StyleCopContrib.Runner\StyleCopContrib.Runner.csproj", "{90C337F4-30B9-4264-9840-D45B32F8BB21}"
@@ -20,9 +17,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCopContrib.UnitTests", "StyleCopContrib.UnitTests\StyleCopContrib.UnitTests.csproj", "{70D130B3-7472-48B5-AC3B-3FA3DCFEFC78}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = StyleCopContrib.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug + Code Analysis|Any CPU = Debug + Code Analysis|Any CPU
 		Debug|Any CPU = Debug|Any CPU
