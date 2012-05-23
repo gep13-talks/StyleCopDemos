@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B6C3F803-339A-485A-8150-B570E82A9DB4}"
+	ProjectSection(SolutionItems) = preProject
+		CodeAnalysisDictionary.xml = CodeAnalysisDictionary.xml
+		CommonAssemblyInfo.cs = CommonAssemblyInfo.cs
+		Local.testsettings = Local.testsettings
+		Settings.StyleCop = Settings.StyleCop
+		StyleCopContrib.vsmdi = StyleCopContrib.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCopContrib.Runner", "StyleCopContrib.Runner\StyleCopContrib.Runner.csproj", "{90C337F4-30B9-4264-9840-D45B32F8BB21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCopContrib.CustomRules", "StyleCopContrib.CustomRules\StyleCopContrib.CustomRules.csproj", "{5EE8D1C1-15A5-4596-B7A4-06D3651EFE5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCopContrib.CustomRules.Tests", "StyleCopContrib.CustomRules.Tests\StyleCopContrib.CustomRules.Tests.csproj", "{520378A1-6B4F-4BDB-8264-42C011C7633C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCopContrib.UnitTests", "StyleCopContrib.UnitTests\StyleCopContrib.UnitTests.csproj", "{70D130B3-7472-48B5-AC3B-3FA3DCFEFC78}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = StyleCopContrib.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug + Code Analysis|Any CPU = Debug + Code Analysis|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90C337F4-30B9-4264-9840-D45B32F8BB21}.Debug + Code Analysis|Any CPU.ActiveCfg = Debug + Code Analysis|Any CPU
+		{90C337F4-30B9-4264-9840-D45B32F8BB21}.Debug + Code Analysis|Any CPU.Build.0 = Debug + Code Analysis|Any CPU
+		{90C337F4-30B9-4264-9840-D45B32F8BB21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C337F4-30B9-4264-9840-D45B32F8BB21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C337F4-30B9-4264-9840-D45B32F8BB21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C337F4-30B9-4264-9840-D45B32F8BB21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EE8D1C1-15A5-4596-B7A4-06D3651EFE5C}.Debug + Code Analysis|Any CPU.ActiveCfg = Debug + Code Analysis|Any CPU
+		{5EE8D1C1-15A5-4596-B7A4-06D3651EFE5C}.Debug + Code Analysis|Any CPU.Build.0 = Debug + Code Analysis|Any CPU
+		{5EE8D1C1-15A5-4596-B7A4-06D3651EFE5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EE8D1C1-15A5-4596-B7A4-06D3651EFE5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EE8D1C1-15A5-4596-B7A4-06D3651EFE5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EE8D1C1-15A5-4596-B7A4-06D3651EFE5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{520378A1-6B4F-4BDB-8264-42C011C7633C}.Debug + Code Analysis|Any CPU.ActiveCfg = Debug + Code Analysis|Any CPU
+		{520378A1-6B4F-4BDB-8264-42C011C7633C}.Debug + Code Analysis|Any CPU.Build.0 = Debug + Code Analysis|Any CPU
+		{520378A1-6B4F-4BDB-8264-42C011C7633C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{520378A1-6B4F-4BDB-8264-42C011C7633C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{520378A1-6B4F-4BDB-8264-42C011C7633C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{520378A1-6B4F-4BDB-8264-42C011C7633C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70D130B3-7472-48B5-AC3B-3FA3DCFEFC78}.Debug + Code Analysis|Any CPU.ActiveCfg = Debug + Code Analysis|Any CPU
+		{70D130B3-7472-48B5-AC3B-3FA3DCFEFC78}.Debug + Code Analysis|Any CPU.Build.0 = Debug + Code Analysis|Any CPU
+		{70D130B3-7472-48B5-AC3B-3FA3DCFEFC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D130B3-7472-48B5-AC3B-3FA3DCFEFC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D130B3-7472-48B5-AC3B-3FA3DCFEFC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D130B3-7472-48B5-AC3B-3FA3DCFEFC78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

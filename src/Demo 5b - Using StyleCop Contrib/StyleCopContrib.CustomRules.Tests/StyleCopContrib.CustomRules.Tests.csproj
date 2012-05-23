@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{520378A1-6B4F-4BDB-8264-42C011C7633C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StyleCopContrib.CustomRules.Tests</RootNamespace>
+    <AssemblyName>StyleCopContrib.CustomRules.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>http://localhost/StyleCopContrib.CustomRules.Tests/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug + Code Analysis|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="StyleCop">
+      <HintPath>..\StyleCop\StyleCop.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Rules\IndentUsingTabsTests.cs" />
+    <Compile Include="Rules\MaintainabilityTests.cs" />
+    <Compile Include="Rules\NamingTests.cs" />
+    <Compile Include="Rules\NoTrailingWhitespaceTests.cs" />
+    <Compile Include="Rules\UsingDirectiveTests.cs" />
+    <Compile Include="RuleTestBase.cs" />
+    <Compile Include="TargetFiles\Maintainability\ClassNameLengthExceeded1.cs" />
+    <Compile Include="TargetFiles\Maintainability\MaximumLineLengthExceeded1.cs" />
+    <Compile Include="TargetFiles\Maintainability\ReturnStatementOnlyInFunctions1.cs" />
+    <Compile Include="TargetFiles\Maintainability\SingleReturnStatement1.cs" />
+    <None Include="TargetFiles\Naming\FileNameMustMatchTypeName1.cs" />
+    <None Include="TargetFiles\Naming\FileNameMustMatchTypeName2.cs" />
+    <None Include="TargetFiles\Naming\FileNameMustMatchTypeName3.cs" />
+    <None Include="TargetFiles\Naming\FileNameMustMatchTypeName4.cs" />
+    <None Include="TargetFiles\Naming\FileNameMustMatchTypeName5.cs" />
+    <None Include="TargetFiles\Naming\FileNameMustMatchTypeName6.cs" />
+    <None Include="TargetFiles\IndentUsingTabs1.cs" />
+    <None Include="Properties\AssemblyInfo.cs" />
+    <None Include="TargetFiles\Naming\FileNameNotMatchingInterfaceName.cs" />
+    <None Include="TargetFiles\NoTrailingWhitespace1.cs" />
+    <None Include="TargetFiles\Using\FirstUsingDirectiveMustBeSystem1.cs" />
+    <None Include="TargetFiles\Using\FirstUsingDirectiveMustBeSystem2.cs" />
+    <None Include="TargetFiles\Using\FirstUsingDirectiveMustBeSystem3.cs" />
+    <None Include="TargetFiles\Using\UsingDirectiveGroupMustBeSeparatedByBlankLine1.cs" />
+    <None Include="TargetFiles\Using\UsingDirectiveMustBeSortedAlphabeticallyByGroup1.cs" />
+    <None Include="TargetFiles\Using\UsingDirectiveMustBeSortedAlphabeticallyByGroup2.cs" />
+    <None Include="TargetFiles\Using\UsingDirectiveMustBeSortedAlphabeticallyByGroup3.cs" />
+    <None Include="TargetFiles\Using\UsingDirectiveMustBeSortedAlphabeticallyByGroup4.cs" />
+    <None Include="TargetFiles\Using\UsingDirectiveMustBeSortedAlphabeticallyByGroup5.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StyleCopContrib.CustomRules\StyleCopContrib.CustomRules.csproj">
+      <Project>{5EE8D1C1-15A5-4596-B7A4-06D3651EFE5C}</Project>
+      <Name>StyleCopContrib.CustomRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StyleCopContrib.Runner\StyleCopContrib.Runner.csproj">
+      <Project>{90C337F4-30B9-4264-9840-D45B32F8BB21}</Project>
+      <Name>StyleCopContrib.Runner</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\CodeAnalysisDictionary.xml">
+      <Link>CodeAnalysisDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Settings.StyleCop" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

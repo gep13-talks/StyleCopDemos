@@ -1,0 +1,8 @@
+The following assemblies must be copied in the StyleCop folder:
+
+Microsoft.StyleCop.dll
+Microsoft.StyleCop.CSharp.dll
+Microsoft.StyleCop.CSharp.Rules.dll
+
+Usually found in the default installation folder: C:\Program Files\Microsoft StyleCop 4.3.2.1
+StyleCop installation is mandatory

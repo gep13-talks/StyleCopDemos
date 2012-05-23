@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SourceAnalyzer Name="StyleCopContrib Rules">
+  <Description>
+    StyleCopContrib rules added to analyzer.
+  </Description>
+  <Properties>
+    <StringProperty Name="UsingDirectiveGroups" DefaultValue="System;*" FriendlyName="Using directive groups"
+                    Description="List of the group prefix (* is a wildcard).  The group separator is ; and the namespace separator is ," />
+    <BooleanProperty Name="AliasShouldBeLast" DefaultValue="false" FriendlyName="Alias should be last of using group"
+                     Description="Wheither aliased using should be grouped at the end of their respective using group" />
+  </Properties>
+  <Rules>
+    <RuleGroup Name="Spacing Rules">
+      <Rule Name="NoTrailingWhiteSpace" CheckId="SC1001">
+        <Context>No trailing whitespace are allowed at the end of lines.</Context>
+        <Description>Validates that the code does not contain trailing whitespaces.</Description>
+      </Rule>
+      <Rule Name="IndentUsingTabs" CheckId="SC1002">
+        <Context>Use tab for indentation instead of spaces.</Context>
+        <Description>Use tab for indentation instead of spaces.</Description>
+      </Rule>
+      <Rule Name="MaximumLineLengthExceeded" CheckId="SC1003">
+        <Context>Maximum ling length exceeded.</Context>
+        <Description>Maximum ling length exceeded.</Description>
+      </Rule>
+      <Rule Name="ClassNameLengthExceeded" CheckId="SC1004">
+        <Context>Maximum Class Name Length has been exceeded.</Context>
+        <Description>Maximum Class Name Length has been exceeded.</Description>
+      </Rule>      
+    </RuleGroup>
+    <RuleGroup Name="Ordering Rules">
+      <Rule Name="UsingDirectiveMustBeSortedAlphabeticallyByGroup" CheckId="SC1201">
+        <Context>Using directive must be sorted alphabetically by group.</Context>
+        <Description>Using directive must be sorted alphabetically by group.</Description>
+      </Rule>
+      <Rule Name="UsingDirectiveGroupMustFollowGivenOrder" CheckId="SC1202">
+        <Context>Using directive group must follow the order given in the rule configuration.</Context>
+        <Description>Using directive group must follow the order given in the rule configuration.</Description>
+      </Rule>
+      <Rule Name="FirstUsingDirectiveMustBeSystem" CheckId="SC1203">
+        <Context>System must always be the first using directive.</Context>
+        <Description>System must always be the first using directive.</Description>
+      </Rule>
+      <Rule Name="UsingDirectiveGroupMustBeSeparatedByBlankLine" CheckId="SC1204">
+        <Context>Each using directive group must be separated by a single blank line.</Context>
+        <Description>Each using directive group must be separated by a single blank line.</Description>
+      </Rule>
+    </RuleGroup>
+    <RuleGroup Name="Naming Rules">
+      <Rule Name="FileNameMustMatchTypeName" CheckId="SC1301">
+        <Context>FileNameMustMatchTypeName.</Context>
+        <Description>FileNameMustMatchTypeName.</Description>
+      </Rule>
+    </RuleGroup>
+    <RuleGroup Name="Maintainability Rules">
+      <Rule Name="SingleReturnStatement" CheckId="SC1401">
+        <Context>SingleReturnStatement.</Context>
+        <Description>SingleReturnStatement.</Description>
+      </Rule>
+      <Rule Name="ReturnStatementOnlyInFunctions" CheckId="SC1402">
+        <Context>ReturnStatementOnlyInFunctions.</Context>
+        <Description>ReturnStatementOnlyInFunctions.</Description>
+      </Rule>
+    </RuleGroup>
+  </Rules>
+</SourceAnalyzer>
