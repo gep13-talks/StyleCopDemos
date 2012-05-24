@@ -1,4 +1,4 @@
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build; StyleCop" >
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build; StyleCop" >
 
   <Import Project="..\Demo 3 - StyleCop As Custom Task\packages\StyleCop.MSBuild.4.7.24.0\tools\StyleCop.Targets"/>
   <UsingTask TaskName="MSBuild.ExtensionPack.Xml.XmlTask" AssemblyFile="..\Lib\MSBuild.ExtensionPack\4.0.0.0\Binaries\MSBuild.ExtensionPack.dll"></UsingTask>
@@ -40,7 +40,7 @@
       SourceFiles="@(StyleCopFiles)"
       ForceFullAnalysis="true"
       DefineConstants="$(DefineConstants)"
-      TreatErrorsAsWarnings="true"
+      TreatErrorsAsWarnings="false"
       CacheResults="$(StyleCopCacheResults)"
       OverrideSettingsFile="$(StyleCopSettingsFile)"
       OutputFile="$(StyleCopOutputFile)"
