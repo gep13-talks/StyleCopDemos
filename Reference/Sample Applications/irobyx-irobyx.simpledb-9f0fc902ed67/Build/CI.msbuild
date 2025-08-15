@@ -1,0 +1,82 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build; FxCop; StyleCop" >
+
+  <Import Project="..\Lib\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+  <Import Project="..\Lib\StyleCop\4.4\Microsoft.StyleCop.Targets"/>
+  <UsingTask TaskName="MSBuild.ExtensionPack.Xml.XmlTask" AssemblyFile="..\Lib\MSBuild.ExtensionPack\4.0.0.0\Binaries\MSBuild.ExtensionPack.dll"></UsingTask>
+  
+  <PropertyGroup>
+    <BuildReportDirectory>TeamCityBuildReports</BuildReportDirectory>
+    <FxCopReport>$(BuildReportDirectory)\fxcop-report.xml</FxCopReport>
+    <SyleCopXml>StyleCopViolations.xml</SyleCopXml>
+    <StyleCopReport>$(BuildReportDirectory)\StyleCop\stylecop-report.html</StyleCopReport>
+  </PropertyGroup>
+
+  <Target Name="MakeDirectories">
+    <MakeDir Directories="$(BuildReportDirectory)"></MakeDir>
+  </Target>
+
+  <ItemGroup>
+    <SolutionToBuild Include="..\*.sln">
+      <Properties>Configuration=Release</Properties>
+    </SolutionToBuild>
+    <ConfigFiles Include ="E:\build\config\irobyx.simpledb\amazon.config"></ConfigFiles>
+  </ItemGroup>
+
+  <Target Name="CopyConfig">
+    <Copy
+          SourceFiles="@(ConfigFiles)"
+          DestinationFolder="..\Test\irobyx.SimpleDb.IntegrationTests\"/>
+  </Target>
+  
+  <Target Name="Build" DependsOnTargets="MakeDirectories;">
+    <MSBuild Projects="@(SolutionToBuild)" />
+  </Target> 
+  
+  <ItemGroup>
+    <FxCopDependencyDirectories Include="..\Lib\**"></FxCopDependencyDirectories>
+  </ItemGroup>
+
+  <Target Name="FxCop" DependsOnTargets="Build">
+    <MSBuild.Community.Tasks.FxCop
+            AnalysisReportFileName="$(FxCopReport)"
+            DependencyDirectories="@(FxCopDependencyDirectories)"
+            FailOnError="False"
+            ToolPath="C:\Program Files (x86)\Microsoft Fxcop 10.0\"
+            ProjectFile="build.FxCop"  />
+    <Message Text="##teamcity[importData id='FxCop' file='\build\$(FxCopReport)']" Condition="'$(TEAMCITY_BUILD_PROPERTIES_FILE)' != ''"></Message>
+  </Target>
+
+  <ItemGroup>
+    <StyleCopFiles Include="..\Implementation\\**\*.cs"
+                   Exclude="..\Implementation\\**\AssemblyInfo.cs; ..\Test\\**\*.cs"></StyleCopFiles>
+    <StyleCopResources Include="..\Lib\BuildReports\StyleCop\Resources\*.*"></StyleCopResources>
+    <StyleCopSettingsFile Include="build.StyleCop"></StyleCopSettingsFile>
+  </ItemGroup>
+
+  <Target Name="StyleCop" DependsOnTargets="Build">
+
+    <!--Cop stylecop resources to BuildReports folder-->
+    <Copy DestinationFolder="$(BuildReportDirectory)\StyleCop" SourceFiles="@(StyleCopResources)"></Copy>
+
+    <Microsoft.StyleCop.StyleCopTask
+      ProjectFullPath="$(MSBuildProjectDirectory)"
+      SourceFiles="@(StyleCopFiles)"
+      ForceFullAnalysis="true"
+      DefineConstants="$(DefineConstants)"
+      TreatErrorsAsWarnings="true"
+      CacheResults="$(StyleCopCacheResults)"
+      OverrideSettingsFile="$(StyleCopSettingsFile)"
+      OutputFile="$(StyleCopOutputFile)"
+      MaxViolationCount="$(StyleCopMaxViolationCount)">
+    </Microsoft.StyleCop.StyleCopTask>
+
+    <MSBuild.ExtensionPack.Xml.XmlTask
+      TaskAction="Transform"
+      XmlFile="StyleCopViolations.xml"
+      XslTransformFile="..\Lib\BuildReports\StyleCop\StyleCop.xslt"
+      OutputFile="$(StyleCopReport)">
+    </MSBuild.ExtensionPack.Xml.XmlTask>
+
+  </Target>
+
+</Project>

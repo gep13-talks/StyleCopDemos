@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{ADF85352-CC53-4EFF-AF45-BAD21DC6FA1F}"
+	ProjectSection(SolutionItems) = preProject
+		Build\build.bat = Build\build.bat
+		Build\build.FxCop = Build\build.FxCop
+		Build\build.StyleCop = Build\build.StyleCop
+		Build\CI.msbuild = Build\CI.msbuild
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "irobyx.SimpleDb", "Implementation\irobyx.SimpleDb\irobyx.SimpleDb.csproj", "{B9F69D54-A6F1-4BFD-B707-164F92EA276A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "irobyx.SimpleDb.IntegrationTests", "Test\irobyx.SimpleDb.IntegrationTests\irobyx.SimpleDb.IntegrationTests.csproj", "{8D84398C-1FF5-405D-AFBB-FAF59D841383}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "irobyx.SimpleDb.UnitTests", "Test\irobyx.SimpleDb.UnitTests\irobyx.SimpleDb.UnitTests.csproj", "{083B279C-F8EA-4A78-9D3B-69A4E153983B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9F69D54-A6F1-4BFD-B707-164F92EA276A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9F69D54-A6F1-4BFD-B707-164F92EA276A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9F69D54-A6F1-4BFD-B707-164F92EA276A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9F69D54-A6F1-4BFD-B707-164F92EA276A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D84398C-1FF5-405D-AFBB-FAF59D841383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D84398C-1FF5-405D-AFBB-FAF59D841383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D84398C-1FF5-405D-AFBB-FAF59D841383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D84398C-1FF5-405D-AFBB-FAF59D841383}.Release|Any CPU.Build.0 = Release|Any CPU
+		{083B279C-F8EA-4A78-9D3B-69A4E153983B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{083B279C-F8EA-4A78-9D3B-69A4E153983B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{083B279C-F8EA-4A78-9D3B-69A4E153983B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{083B279C-F8EA-4A78-9D3B-69A4E153983B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

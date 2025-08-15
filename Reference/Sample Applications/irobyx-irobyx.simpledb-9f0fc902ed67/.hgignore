@@ -1,0 +1,49 @@
+# Ignore file for Visual Studio 2008
+# use glob syntax
+syntax: glob
+# Ignore Visual Studio 2008 files
+*.obj
+*.exe
+# keep pdb in for now: lib files
+# *.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.scc
+[Bb]in
+[Db]ebug*/
+[Oo]bj/
+[Rr]elease*/
+_[Rr]e[Ss]harper*/
+[Tt]est[Rr]esult*
+[Bb]uild[Ll]og.*
+*.[Pp]ublish.xm
+PrecompiledWeb/
+UpgradeLog*.*
+_UpgradeReport_Files
+#Guidance Automation Toolkit
+*.gpState
+#patches
+*.patch
+# Ignore buildreports
+StyleCopViolations.xml
+StyleCop.Cache
+partcover.xml
+TeamCityBuildReports/
+# Ignore extension files
+*.vs10x
+#ignore local config files
+amazon.config
